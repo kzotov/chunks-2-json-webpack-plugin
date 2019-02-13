@@ -42,6 +42,15 @@ class Chunks2JsonWebpackPlugin {
         });
         const file = path.join(process.cwd(), this.options.outputDir, this.options.filename);
         const blob = JSON.stringify(this.result, undefined, 2);
+        blob = '<?php\n\n';
+        blob += 'namespace Webpack;\n';
+        blob += 'class Config\n';
+        blob += '{\n\n';
+        blob += '    public static function getConfig()\n';
+        blob += '    {\n';
+        blob += '        return '+blob.replace(/{/g,'[').replace(/}/g,']').replace(/:/g,'=>')+';';
+        blob += '    }\n';
+        blob += '}';
         try {
             fs.writeFileSync(file, blob, { flag: 'w' });
             console.log(`File successfully created - ${file}`);
@@ -51,4 +60,4 @@ class Chunks2JsonWebpackPlugin {
     }
 }
 
-module.exports = Chunks2JsonWebpackPlugin; 
+module.exports = Chunks2SymfonyConfWebpackPlugin; 

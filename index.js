@@ -1,9 +1,9 @@
 const fs  = require('fs');
 const path = require('path');
 
-const pluginName = 'Chunks2JsonWebpackPlugin';
+const pluginName = 'Chunks2SymfonyConfWebpackPlugin';
 
-class Chunks2JsonWebpackPlugin {
+class Chunks2SymfonyConfWebpackPlugin {
     constructor(options) {
         this.options = options;
         this.result = {};

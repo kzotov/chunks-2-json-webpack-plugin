@@ -1,4 +1,4 @@
-# chunks-2-json-webpack-plugin
+# chunks-2-symfony-conf-webpack-plugin
 Plugin for webpack 4, that outputs build files to JSON
 
 ## Instalation 

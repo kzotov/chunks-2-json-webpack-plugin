@@ -41,7 +41,7 @@ class Chunks2SymfonyConfWebpackPlugin {
             }
         });
         const file = path.join(process.cwd(), this.options.outputDir, this.options.filename);
-        const blob = JSON.stringify(this.result, undefined, 2);
+        let blob = JSON.stringify(this.result, undefined, 2);
         blob = '<?php\n\n';
         blob += 'namespace Webpack;\n';
         blob += 'class Config\n';
